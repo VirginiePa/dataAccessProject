@@ -43,7 +43,16 @@ public class DapClient {
      */
     public static String buildUrl(final String path, final String userId) {
         final StringBuilder builder = new StringBuilder();
-        builder.append(DEFAULT_WS_URL).append(path).append("?userId=").append(userId);
+        builder.append(DEFAULT_WS_URL);
+        
+        if (path.startsWith("/")) {
+            builder.append(path);
+          
+        } else {
+            builder.append("/").append(path);
+        }
+        builder.append("?userId=").append(userId);
+
         return builder.toString();
     }
 
@@ -56,6 +65,7 @@ public class DapClient {
         final StringBuilder response = new StringBuilder();
         try {
             final URL url = new URL(wsPath);
+            NetworkUtil nu = new NetworkUtil();
             final HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "text/plain");

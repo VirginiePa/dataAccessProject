@@ -17,7 +17,6 @@ import fr.houseofcode.dap.ws.GoogleFacade;
  */
 @RestController
 @RequestMapping("/emails")
-@SuppressWarnings("PMD.AtLeastOneConstructor")
 public class Emails {
 
     /** Google facade. */

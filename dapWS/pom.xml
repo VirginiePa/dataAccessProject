@@ -21,6 +21,7 @@
 
     <dependencyManagement>
         <dependencies>
+        
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
@@ -152,6 +153,14 @@
             <artifactId>google-api-services-people</artifactId>
             <version>v1-rev310-1.23.0</version>
         </dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+	
+		</dependency>
+        
     </dependencies>
 
     <build>
